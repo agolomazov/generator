@@ -1,0 +1,186 @@
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: $grid;
+	font-weight: $font-weight;
+}
+input {
+	&.focus,
+	&:focus,
+	&:active,
+	&.active {
+		@include tab-focus;
+	}
+	&[disabled] {
+		cursor: default;
+	}
+}
+.form-block {
+	margin-bottom: $grid*2.75;
+}
+.form-control {
+	height: $grid*3.5; // 28px
+	border-radius: $border-radius-base;
+	border:1px solid $color-border;
+	color: $color-border;
+	width: 100%;
+	padding: 0 $grid/2; //0 4px;
+	&.fileinput-button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+		direction: ltr;
+		cursor: pointer;
+	}
+}
+
+.form-file-upload {
+	display: block;
+	width: 100%;
+	height: $grid*3.5; // 28px
+	border-radius: 3px;
+	border: 1px solid $color-border;
+	color: $color-border;
+	padding:0;
+	position: relative;
+	
+
+
+	&:hover {
+		.btn-upload {
+			background-color: $color-red-hover;
+		}
+	}
+	.text-upload {
+		padding: 5px;
+		padding-left: 10px;
+		display: block;
+	}
+	.btn-upload {
+		position: absolute;
+		right: -1px;
+		top: -1px;
+		height: $grid*3.5; // 28px
+		width: $grid*5; // 40px
+		background: $color-red;
+		@include border-right-radius($border-radius-base);
+		@include transition(all .25s linear);
+		&:after {
+			content: "";
+			background: url(data:image/image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAQCAYAAAD52jQlAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA35pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGNzdGMTE3NDA3MjA2ODExODA4M0VCODNDNjJCRDdDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0Q0QyQTA0QzcwMjAxMUU0QTAwMkVENjIyRDMxNTI5OSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0Q0QyQTA0QjcwMjAxMUU0QTAwMkVENjIyRDMxNTI5OSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3Njk1NUYwQUM2OEU0MTFCNkZGQjE0OUU2Q0M5OTM3IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6NTdiZTFjZjUtNjViYS0xMWU0LWJjOGItODhjZGU4MWI5ZTRhIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wktE3AAAAalJREFUeNqU1EsoRFEYwPE7yCMWFhLJyKNmqVgoKxqEhYVIKEphM8SkbBRloyRLjw2akMhkJWxkoeSZUpKiLGahZBZS4/n/6puabudqnPp1m3PP+c433znnusLhN8uhZWAQrfDgA2dYwCZ+nCa6HIKWYBfZCOAUKahGC3bQgUi8QSXDS3yiDk+29xXY02x7TUGTDH3DcKPUEFDaCQawovOPdYHX6IAEw6RObOE2pi8XIX1KW9dAsvA8HtBlCupCjW7KgW2hLOTo09LStKEMxTjUzH2xQXP1hQS7UvG2RzRjDjOSlNQkXQufinJcWP9vcryG4IVfMh3RjfHGBEzGDZocgjTgDmkxfXK8llArQduxaNvpiJZDNqPRFrAeQRzh3fbuHnkStBDnhmx8WvygZmbpud3GGvoMc4rwLDV9QaZDnfqRiCntm9YbJof+2zZexvXITZRM99GtR8oUWAIs6+9VnfhlGCv9+ZiUa+rRDZIi+x3us2RRpXU2BazU4ziG2ejdl83Y0FLI37v+6ytkawWY0DM6bv+gyLEa1QXcDlfY1EI6LxDt+BVgAGUZa5bX3OJ4AAAAAElFTkSuQmCC);
+			width: 21px;
+			height: 16px;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -8px;
+			margin-left: -11px;
+		}
+	}
+	&.disable {
+		opacity: .4;
+		&:hover {
+			cursor: default;
+			.btn-upload {
+				cursor: default;
+				background-color: $color-red;
+			}
+			input {
+			cursor: default;
+			}
+		}
+	}	
+}
+
+.fileupload-wrapper {
+	width: 100%;
+	position: relative;
+	input[type="file"] {
+		height: 100%;
+		position: absolute;
+		z-index: 99;
+		right: 0;
+		margin-top: 4px;
+		width: 40px;
+		top: 0;
+		cursor: pointer;
+		&:after {
+			content: "";
+			display: block;
+			width: 40px;
+			height: $grid*3.5;
+			background-image: url(data:image/image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAQCAYAAAD52jQlAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA35pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGNzdGMTE3NDA3MjA2ODExODA4M0VCODNDNjJCRDdDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0Q0QyQTA0QzcwMjAxMUU0QTAwMkVENjIyRDMxNTI5OSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0Q0QyQTA0QjcwMjAxMUU0QTAwMkVENjIyRDMxNTI5OSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3Njk1NUYwQUM2OEU0MTFCNkZGQjE0OUU2Q0M5OTM3IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6NTdiZTFjZjUtNjViYS0xMWU0LWJjOGItODhjZGU4MWI5ZTRhIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wktE3AAAAalJREFUeNqU1EsoRFEYwPE7yCMWFhLJyKNmqVgoKxqEhYVIKEphM8SkbBRloyRLjw2akMhkJWxkoeSZUpKiLGahZBZS4/n/6puabudqnPp1m3PP+c433znnusLhN8uhZWAQrfDgA2dYwCZ+nCa6HIKWYBfZCOAUKahGC3bQgUi8QSXDS3yiDk+29xXY02x7TUGTDH3DcKPUEFDaCQawovOPdYHX6IAEw6RObOE2pi8XIX1KW9dAsvA8HtBlCupCjW7KgW2hLOTo09LStKEMxTjUzH2xQXP1hQS7UvG2RzRjDjOSlNQkXQufinJcWP9vcryG4IVfMh3RjfHGBEzGDZocgjTgDmkxfXK8llArQduxaNvpiJZDNqPRFrAeQRzh3fbuHnkStBDnhmx8WvygZmbpud3GGvoMc4rwLDV9QaZDnfqRiCntm9YbJof+2zZexvXITZRM99GtR8oUWAIs6+9VnfhlGCv9+ZiUa+rRDZIi+x3us2RRpXU2BazU4ziG2ejdl83Y0FLI37v+6ytkawWY0DM6bv+gyLEa1QXcDlfY1EI6LxDt+BVgAGUZa5bX3OJ4AAAAAElFTkSuQmCC);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: $color-red;
+			position: absolute;
+			top: -4px;
+			right: 0;
+			border-radius: 0 4px 4px 0;
+		}
+		&:hover {
+			&:after {
+				background-color: $color-red-hover;
+			}
+		}
+	}
+	.input {
+		display: block;
+		height: $grid*3.5;
+		color: $color-border;
+		background-color: transparent;
+		border: 1px solid $color-border;
+		border-radius: $border-radius-base;
+		outline: none;
+		width: 100%;
+		padding-left: 10px;
+		line-height: 2;
+	}
+	&.disable {
+		opacity: .4;
+		input[type="file"] {
+			cursor: default;
+			&:hover {
+				&:after {
+					background-color: $color-red;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+.row-slider {
+	padding: 0 $grid*2;
+	margin-bottom: $grid*3;
+}
+.ui-slider {
+	&.ui-slider-horizontal {
+		height: 3px;
+		background: $color-passive;
+		border-radius: $border-radius-base;
+		.ui-slider-handle {
+			width: 22px;
+			height: 22px;
+			background-color: $color-border;
+			border: 7px solid $color-passive;
+			border-radius: 50%;
+			top: -10px;
+			box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.38);
+			cursor: pointer;
+			&:hover,
+			&:active {
+				background-color: $color-red;
+			}
+			&:focus,
+			&:active:focus,
+			&.active:focus,
+			&.focus,
+			&:active.focus,
+			&.active.focus {
+				@include tab-focus;
+			}
+		}
+	}
+	.ui-slider-range {
+		height: 3px;
+		background: $color-border;
+		border-radius: $border-radius-base;
+	}
+}

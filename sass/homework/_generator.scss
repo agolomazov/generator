@@ -1,0 +1,120 @@
+.block-generator {
+	width: $main-block-width + $left-block-width; // 960px;
+	height: 672px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -($main-block-width + $left-block-width)/2; // 480px;
+	margin-top: -336px;
+	background-color: rgba($generator-color-bg, 0.64);
+	.main-block {
+		width: $main-block-width; // 700px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		.h1 {
+		    margin-bottom: $grid*3; // 24px
+		    margin-top: $grid*2; // 16px
+		    height: $grid*5; // 40px
+		    vertical-align: middle;
+		    line-height: 1.1111; // 40/36
+		    text-align: left;
+		    padding-left: $grid*3; // 24px
+		}
+		.pic-block  {
+		    position: absolute;
+			overflow: hidden;
+		    top: 110px;
+		    bottom: 26px;
+		    left: 26px;
+		    right: 26px;
+		    background-image: url(../img/bg-pic-pattern.png);
+		    background-position: center center;
+		    background-color: $gray-lighter;
+		    .div-file-upload {
+			    width: 100%;
+			    height: 100%;
+			    overflow: hidden;
+			    text-align: center;
+			    img {
+				    max-width: 100%;
+				    max-height: 100%;
+			    }
+		    }
+		    .div-watermark-upload {
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    z-index: 1;
+			    top: 0;
+			    overflow: hidden;
+			    .drag-watermark {
+				    cursor: move;
+			    }
+		    }
+		}
+	}
+	.navigation-block {
+		width: $left-block-width; // 260px;
+		height: 100%;
+		background-color: $left-block-bg;
+		position: absolute;
+		right: 0;
+		top: 0;
+		color: $generator-color-bg;
+		.h2 {
+			margin-bottom: $grid*3; // 24px
+			margin-top: $grid*2; // 16px
+			height: $grid*5; // 40px
+		    vertical-align: middle;
+		    line-height: 1.807; // 46/26
+		    text-align: center;
+		    letter-spacing: 0.02em;
+		}
+	}
+}
+.settings-block {
+	position: relative;
+	padding: $grid ($grid*2);
+	border-bottom: 1px solid rgba($color-red, 0.4);
+	.form-block {
+		.form-title {
+			margin-bottom: $grid;
+		}
+		.form-file-upload  {
+			margin-bottom: $grid*2;
+		}
+	}
+	.ico-row {
+		margin-top: -5px;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		width: 19px;
+		height: 10px;
+		background: url(data:image/image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAKCAIAAADZ6/LIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGNzdGMTE3NDA3MjA2ODExODA4M0VCODNDNjJCRDdDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0QUQxMkI3RTcwMEYxMUU0QTAwMkVENjIyRDMxNTI5OSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0QUQxMkI3RDcwMEYxMUU0QTAwMkVENjIyRDMxNTI5OSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3Njk1NUYwQUM2OEU0MTFCNkZGQjE0OUU2Q0M5OTM3IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6NTdiZTFjZjUtNjViYS0xMWU0LWJjOGItODhjZGU4MWI5ZTRhIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+MHmlRAAAAJBJREFUeNpi/HL40F9NXQZWNgbiwe9fzNcvM/3V0GW+fZ3x6xcidQFVAtUDdTExsLH9k1dmeniXGM1ANUCV/+SUgLqYgPz/3DzEaIZr+8/DC+QyQUQJakbThtCJXzOmNhSduDRj1YauE1MzVJu8Mpo2kNTHj19x+kpShun5E5A2bh5MNUxYwwNqM25tQAAQYABQkGmqe011AQAAAABJRU5ErkJggg==);
+		bottom: -10px;
+		left: 50%;
+		margin-left: -8px;
+	}
+	.row {
+		&.title {
+			margin-top: $grid;
+			margin-bottom: $grid*4;
+		}
+		&.title-position {
+			margin-bottom: $grid*4.875;
+		}
+	}
+
+}
+.button-block {
+	padding: ($grid*7) $grid*1.25 ($grid*3);
+}
+#drag {
+	display: inline-block;
+	position: absolute;
+}
+

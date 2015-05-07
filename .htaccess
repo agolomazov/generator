@@ -1,0 +1,23 @@
+AddDefaultCharset UTF-8
+
+# Разрешение прохождения по символическим ссылкам
+Options FollowSymLinks
+# Запрет на просмотр файлов в директориях
+Options -Indexes
+
+# Установка индексного файла для директории
+DirectoryIndex index.php
+
+# Включение mod_rewrite
+RewriteEngine on
+
+# Правила для mod_rewrite
+# Если это не файл favicon
+RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
+# Если это не папка
+RewriteCond %{REQUEST_FILENAME} !-d
+# Если это не файл
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^ru/?$ index.php?lang=ru
+RewriteRule ^eng/?$ index.php?lang=eng

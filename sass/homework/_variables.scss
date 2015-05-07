@@ -1,0 +1,65 @@
+$grid: 8px;
+
+$gray-base:              #2e3641 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default;
+$gray-dark:              lighten($gray-base, 20%) !default;
+$gray:                   lighten($gray-base, 33.5%) !default;
+$gray-light:             lighten($gray-base, 46.7%) !default;
+$gray-lighter:           lighten($gray-base, 93.5%) !default;
+
+$generator-color-bg:    #2E3641 !default;
+$left-block-bg:         #f1f1f5 !default;
+
+$color-border:          #9eb2c0 !default;
+$color-red:             #f97e76 !default;
+$color-passive:         #dbe1e8 !default;
+
+$color-border-hover:    darken($color-border, 5.5%) !default;
+$color-red-hover:       darken($color-red, 5.5%) !default;
+$color-passive-hover:   darken($color-passive, 5.5%) !default;
+
+$color-btn:             #FFF !default;
+$color-btn-focus:       $color-btn !default;
+$color-btn-hover:       $color-btn !default;
+
+$btn-cancel-bg:         #c1cfd9 !default;
+$btn-cancel-bg-hover:   darken($btn-cancel-bg, 5.5%) !default;
+$btn-save-bg:           $color-red !default;
+$btn-save-bg-hover:     darken($btn-save-bg, 5.5%) !default;
+
+$body-bg:               #f1f1f5 !default;
+
+$text-color:            $gray-base !default;
+
+$font-family-sans-serif:  'Roboto', sans-serif !default;
+$font-family-base:        $font-family-sans-serif !default;
+$font-weight-base:        300 !default;
+
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 1.859)) !default; // ~26px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+
+$font-btn:                $font-size-large;
+$font-weight:             500;
+
+$line-height-base:        1.1428 !default; // 16/14
+
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+$headings-font-family:    inherit !default;
+$headings-font-weight:    100 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+$border-radius-base:        4px !default;
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
+
+$main-block-width:          700px;
+$left-block-width:          260px;
+
+

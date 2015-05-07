@@ -1,0 +1,70 @@
+.box-position {
+	border: 1px solid $color-border;
+	border-radius: $border-radius-base;
+	overflow: hidden;
+	width: 101px;
+	background: $color-passive;
+	margin-bottom: $grid*3;
+	position: relative;
+	.cell {
+		float: left;
+		width: 33px;
+		height: 33px;
+		border-right:1px solid $color-border;
+		border-bottom: 1px solid  $color-border;
+		@include transition(all .25s linear);
+
+		&:nth-child(3n+3) {
+			border-right:0;
+		}
+		&:nth-child(1n+7) {
+			border-bottom: 0;
+		}
+	}
+	.after,
+	.before {
+		display: none;
+		min-width: 1px;
+		min-height: 1px;
+	}
+	&.landscape {
+		.cell {
+			cursor: pointer;
+			&:hover {
+				background: $color-passive-hover;
+				&.active {
+					background-color: $color-red;
+				}
+			}
+			&.active {
+				background-color: $color-red;
+			}
+		}
+	}
+	&.multiplace {
+		.after,
+		.before {
+			display: block;
+		}
+		.after {
+			content: "";
+			display: block;
+			position: absolute;
+			height: 99px;
+			width: 1px;
+			left: 50%;
+			margin-left: -0px;
+			background-color: $color-red;
+		}
+		.before {
+			content: "";
+			display: block;
+			position: absolute;
+			height: 1px;
+			width: 99px;
+			top: 50%;
+			margin-top: -0px;
+			background-color: $color-red;
+		}
+	}
+}

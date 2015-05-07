@@ -1,0 +1,60 @@
+.col-spinner {
+	label {
+		margin-right: $grid;
+	}
+	.row-spinner {
+		margin: 0;
+		margin-bottom: $grid;
+		label {
+			margin-right: $grid/2;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.ui-spinner {
+	height: 45px;
+	width: 68px;
+	text-align: left;
+	.ui-spinner-input {
+		width: 45px;
+		height: 45px;
+		border: 1px solid #9eb2c0;
+		border-radius: $border-radius-base;
+		margin: 0;
+		font-size: 24px;
+		text-align: center;
+		color: #444a53;
+	}
+	.ui-spinner-button {
+		cursor: pointer;
+		&.ui-spinner-down {
+			.ui-button-text {
+				position: absolute;
+				bottom: 2px;
+			}
+		}
+		.ui-icon-triangle-1-n {
+			display: block;
+			width: 13px;
+			height: 8px;
+			background: url(../img/ui-spinner-button.png) no-repeat 0 -57px;
+		}
+		.ui-icon-triangle-1-s {
+			display: block;
+			width: 13px;
+			height: 8px;
+			background: url(../img/ui-spinner-button.png) no-repeat 0 -87px;
+		}
+		&:hover {
+			.ui-icon-triangle-1-n {
+				background-position: 0 0;
+			}
+			.ui-icon-triangle-1-s {
+				background-position: 0 -30px;
+			}
+		}
+	}
+}
